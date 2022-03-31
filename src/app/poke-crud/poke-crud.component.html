@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Pokémons</h4>
+        </div>
+        <div class="float-end">
+            <button type="button" class="btn btn-primary" routerLinkActive="active" [routerLink]="['novo']">Novo Pokémon</button>
+        </div>
+    </div>
+    <div class="card-body ">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let poke of pokes$ | async ">
+                    <td>{{ poke.name }}</td>
+                    <td>{{ poke.type }}</td>
+                    <td>{{ poke.height }}</td>
+                    <td>{{ poke.weight }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
